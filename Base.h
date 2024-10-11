@@ -4,7 +4,9 @@
 
 class Base{
   public:
-    virtual ~Base();
+    virtual ~Base() {
+      std::cout << "Base destructor called" << std::endl;
+    };
     virtual void display() const = 0;
   };
 
