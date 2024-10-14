@@ -1,30 +1,30 @@
 #ifndef HERO_H
-#define HRO_H
+#define HERO_H
 
 #include "Base.h"
 #include <iostream>
 #include <string>
-#include <vector>
 
-class Hero : public Base{
-  private:
+class Hero : public Base {
+private:
     std::string name;
     std::string weapon;
-    std::vector<std::string> skills;
-  public:
+    std::string skills;
+public:
     Hero();
-    Hero(const std::string& name, const std::string& weapon, const std::vector<std::string>& skills);
+    Hero(const std::string& name, const std::string& weapon, const std::string& skills);
     Hero(const Hero& other);
     ~Hero();
 
     void setName(const std::string& name);
     void setWeapon(const std::string& weapon);
-    void setSkills(const std::vector<std::string>& skills);
+    void setSkills(const std::string& skills);
 
-    std::string getName();
-    std::string getWeapon();
-    std::vector<std::string> getSkills();
+    std::string getName() const;
+    std::string getWeapon() const;
+    std::string getSkills() const;
 
     void display() const override;
-  };
-#endif //BASE_H
+};
+
+#endif // HERO_H

@@ -2,22 +2,26 @@
 #define KEEPER_H
 
 #include "Base.h"
-#include <vector>
-#include <fstream>
+#include <string>
 
 class Keeper {
-private:
-    std::vector<Base*> objects;
-
 public:
     Keeper();
     ~Keeper();
 
-    void addObject(Base* obj);
-    void delObject(int index);
-    void displayObjects();
+    void add(Base* item);
+    void del(int index);
     void save(const std::string& filename);
     void load(const std::string& filename);
+    void print() const;
+
+private:
+    Base** items;
+    int size;
+    int capacity;
+
+    void resize();
+    Base* create_item(const std::string& data);
 };
 
-#endif //KEEPER_H
+#endif // KEEPER_H

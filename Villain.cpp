@@ -4,7 +4,7 @@ Villain::Villain() {
     std::cout << "Villain default constructor called" << std::endl;
 }
 
-Villain::Villain(const std::string& name, const std::string& weaponType, const std::string& crime, const std::string& location, const std::vector<std::string>& skills)
+Villain::Villain(const std::string& name, const std::string& weaponType, const std::string& crime, const std::string& location, const std::string& skills)
     : Hero(name, weaponType, skills), crime(crime), location(location) {
     std::cout << "Villain parameterized constructor called" << std::endl;
 }
@@ -39,8 +39,5 @@ void Villain::display() const {
               << "Weapon: " << getWeapon() << "\n"
               << "Crime: " << getCrime() << "\n"
               << "Location: " << getLocation() << "\n"
-              << "Skills: ";
-    for (auto it = std::begin(getSkills()); it != std::end(getSkills()); ++it)
-        std::cout << *it << ", ";
-    std::cout << std::endl;
+              << "Skills: " << getSkills() << std::endl;
 }

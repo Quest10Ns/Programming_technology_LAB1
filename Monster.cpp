@@ -6,7 +6,7 @@ Monster::Monster() {
 }
 
 Monster::Monster(const std::string& name, const std::string& description)
-    : Hero(name, "", std::vector<std::string>()), description(description) {
+    : Hero(name, "", ""), description(description) {
     std::cout << "Monster parameterized constructor called" << std::endl;
 }
 
@@ -23,7 +23,7 @@ void Monster::setDescription(const std::string& description) {
     this->description = description;
 }
 
-std::string Monster::getDescription() {
+std::string Monster::getDescription() const {
     return description;
 }
 

@@ -3,7 +3,6 @@
 
 #include "Hero.h"
 #include <iostream>
-#include <vector>
 #include <string>
 
 class Villain : public Hero {
@@ -13,7 +12,7 @@ private:
 
 public:
     Villain();
-    Villain(const std::string& name, const std::string& weaponType, const std::string& crime, const std::string& location, const std::vector<std::string>& skills);
+    Villain(const std::string& name, const std::string& weaponType, const std::string& crime, const std::string& location, const std::string& skills);
     Villain(const Villain& other);
     ~Villain();
 
