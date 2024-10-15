@@ -28,8 +28,8 @@ int main() {
             std::cin >> name;
             std::cout << "Enter Hero weapon type: ";
             std::cin >> weapon;
-            std::cout << "Enter Hero skills (separated by spaces): ";
-            std::cin.ignore(); // Ignore the newline character left in the buffer
+            std::cout << "Enter Hero skills: ";
+            std::cin.ignore();
             std::getline(std::cin, skills);
             keeper.add(new Hero(name, weapon, skills));
         } else if (choice == 2) {
@@ -42,7 +42,7 @@ int main() {
             std::cin >> crime;
             std::cout << "Enter Villain location: ";
             std::cin >> location;
-            std::cout << "Enter Villain skills (separated by spaces): ";
+            std::cout << "Enter Villain skills: ";
             std::cin.ignore(); // Ignore the newline character left in the buffer
             std::getline(std::cin, skills);
             keeper.add(new Villain(name, weaponType, crime, location, skills));
@@ -66,20 +66,14 @@ int main() {
         } else if (choice == 5) {
             keeper.print();
         } else if (choice == 6) {
-            std::string filename;
-            std::cout << "Enter filename to save: ";
-            std::cin >> filename;
             try {
-                keeper.save(filename);
+                keeper.save();
             } catch (const std::exception& e) {
                 std::cout << "Error: " << e.what() << std::endl;
             }
         } else if (choice == 7) {
-            std::string filename;
-            std::cout << "Enter filename to load: ";
-            std::cin >> filename;
             try {
-                keeper.load(filename);
+                keeper.load();
             } catch (const std::exception& e) {
                 std::cout << "Error: " << e.what() << std::endl;
             }

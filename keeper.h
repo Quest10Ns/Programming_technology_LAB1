@@ -11,8 +11,8 @@ public:
 
     void add(Base* item);
     void del(int index);
-    void save(const std::string& filename);
-    void load(const std::string& filename);
+    void save();
+    void load();
     void print() const;
 
 private:
@@ -21,7 +21,6 @@ private:
     int capacity;
 
     void resize();
-    Base* create_item(const std::string& data);
 };
 
 #endif // KEEPER_H
