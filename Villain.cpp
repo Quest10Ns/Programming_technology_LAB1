@@ -5,12 +5,12 @@ Villain::Villain() {
 }
 
 Villain::Villain(const std::string& name, const std::string& weaponType, const std::string& crime, const std::string& location, const std::string& skills)
-    : Hero(name, weaponType, skills), crime(crime), location(location) {
+    : name(name), weapon(weaponType), skills(skills), crime(crime), location(location) {
     std::cout << "Villain parameterized constructor called" << std::endl;
 }
 
 Villain::Villain(const Villain& other)
-    : Hero(other), crime(other.crime), location(other.location) {
+    : name(other.name), weapon(other.weapon), skills(other.skills), crime(other.crime), location(other.location) {
     std::cout << "Villain copy constructor called" << std::endl;
 }
 
@@ -32,6 +32,30 @@ std::string Villain::getCrime() const {
 
 std::string Villain::getLocation() const {
     return location;
+}
+
+void Villain::setName(const std::string& name) {
+    this->name = name;
+}
+
+void Villain::setWeapon(const std::string& weapon) {
+    this->weapon = weapon;
+}
+
+void Villain::setSkills(const std::string& skills) {
+    this->skills = skills;
+}
+
+std::string Villain::getName() const {
+    return name;
+}
+
+std::string Villain::getWeapon() const {
+    return weapon;
+}
+
+std::string Villain::getSkills() const {
+    return skills;
 }
 
 void Villain::display() const {

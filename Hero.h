@@ -2,14 +2,13 @@
 #define HERO_H
 
 #include "Base.h"
-#include <iostream>
-#include <string>
 
 class Hero : public Base {
 private:
     std::string name;
     std::string weapon;
     std::string skills;
+
 public:
     Hero();
     Hero(const std::string& name, const std::string& weapon, const std::string& skills);
@@ -19,7 +18,6 @@ public:
     void setName(const std::string& name);
     void setWeapon(const std::string& weapon);
     void setSkills(const std::string& skills);
-
     std::string getName() const;
     std::string getWeapon() const;
     std::string getSkills() const;

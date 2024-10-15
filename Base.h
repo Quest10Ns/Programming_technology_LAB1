@@ -1,12 +1,12 @@
 #ifndef BASE_H
 #define BASE_H
+
 #include <iostream>
+#include <string>
 
 class Base {
 public:
-  virtual ~Base() {
-    std::cout << "Base destructor called" << std::endl;
-  }
+  virtual ~Base() = default;
   virtual void display() const = 0;
 };
 

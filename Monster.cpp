@@ -6,12 +6,12 @@ Monster::Monster() {
 }
 
 Monster::Monster(const std::string& name, const std::string& description)
-    : Hero(name, "", ""), description(description) {
+    : name(name), description(description) {
     std::cout << "Monster parameterized constructor called" << std::endl;
 }
 
 Monster::Monster(const Monster& other)
-    : Hero(other), description(other.description) {
+    : name(other.name), description(other.description) {
     std::cout << "Monster copy constructor called" << std::endl;
 }
 
@@ -19,8 +19,16 @@ Monster::~Monster() {
     std::cout << "Monster destructor called" << std::endl;
 }
 
+void Monster::setName(const std::string& name) {
+    this->name = name;
+}
+
 void Monster::setDescription(const std::string& description) {
     this->description = description;
+}
+
+std::string Monster::getName() const {
+    return name;
 }
 
 std::string Monster::getDescription() const {

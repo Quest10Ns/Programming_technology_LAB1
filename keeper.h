@@ -2,6 +2,7 @@
 #define KEEPER_H
 
 #include "Base.h"
+#include "Hero.h"
 #include <string>
 
 class Keeper {
@@ -11,6 +12,7 @@ public:
 
     void add(Base* item);
     void del(int index);
+    void edit(int index);
     void save();
     void load();
     void print() const;

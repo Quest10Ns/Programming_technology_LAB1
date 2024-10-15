@@ -1,21 +1,21 @@
 #include "Hero.h"
 
 Hero::Hero() {
-    std::cout << "Hero constructor" << std::endl;
+    std::cout << "Hero default constructor called" << std::endl;
 }
 
 Hero::Hero(const std::string& name, const std::string& weapon, const std::string& skills)
     : name(name), weapon(weapon), skills(skills) {
-    std::cout << "Hero parametrized constructor" << std::endl;
+    std::cout << "Hero parameterized constructor called" << std::endl;
 }
 
 Hero::Hero(const Hero& other)
     : name(other.name), weapon(other.weapon), skills(other.skills) {
-    std::cout << "Hero copy constructor" << std::endl;
+    std::cout << "Hero copy constructor called" << std::endl;
 }
 
 Hero::~Hero() {
-    std::cout << "Hero destructor" << std::endl;
+    std::cout << "Hero destructor called" << std::endl;
 }
 
 void Hero::setName(const std::string& name) {

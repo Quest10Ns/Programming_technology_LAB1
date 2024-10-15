@@ -1,12 +1,15 @@
 #ifndef VILLAIN_H
 #define VILLAIN_H
 
-#include "Hero.h"
+#include "Base.h"
 #include <iostream>
 #include <string>
 
-class Villain : public Hero {
+class Villain : public Base {
 private:
+    std::string name;
+    std::string weapon;
+    std::string skills;
     std::string crime;
     std::string location;
 
@@ -16,6 +19,12 @@ public:
     Villain(const Villain& other);
     ~Villain();
 
+    void setName(const std::string& name);
+    void setWeapon(const std::string& weapon);
+    void setSkills(const std::string& skills);
+    std::string getName() const;
+    std::string getWeapon() const;
+    std::string getSkills() const;
     void setLocation(const std::string& location);
     void setCrime(const std::string& crime);
     std::string getCrime() const;

@@ -19,6 +19,7 @@ int main() {
         std::cout << "6. Save to File" << std::endl;
         std::cout << "7. Load from File" << std::endl;
         std::cout << "8. Exit" << std::endl;
+        std::cout << "9. Edit" << std::endl;
         std::cout << "Enter your choice: ";
         std::cin >> choice;
 
@@ -43,7 +44,7 @@ int main() {
             std::cout << "Enter Villain location: ";
             std::cin >> location;
             std::cout << "Enter Villain skills: ";
-            std::cin.ignore(); // Ignore the newline character left in the buffer
+            std::cin.ignore();
             std::getline(std::cin, skills);
             keeper.add(new Villain(name, weaponType, crime, location, skills));
         } else if (choice == 3) {
@@ -79,7 +80,17 @@ int main() {
             }
         } else if (choice == 8) {
             break;
-        } else {
+        }else if (choice == 9) {
+            int index;
+            std::cout << "Enter index to remove: ";
+            std::cin >> index;
+            try {
+                keeper.edit(index);
+            } catch (const std::exception& e) {
+                std::cout << "Error: " << e.what() << std::endl;
+            }
+        }
+        else {
             std::cout << "Invalid choice. Please try again." << std::endl;
         }
     }
